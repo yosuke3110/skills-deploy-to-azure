@@ -73,6 +73,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build-Docker-Image
     name: Deploy app container to Azure
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: "login via Azure CLI"
         uses: azure/login@v2
